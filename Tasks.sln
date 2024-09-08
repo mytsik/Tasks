@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1Task1", "Lab0\Lab0.vcxproj", "{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1Task2", "Lab1Task2\Lab1Task2.vcxproj", "{C01416FD-FBAF-49F4-B2E7-354CCE614AA1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1Task3", "Lab1Task3\Lab1Task3.vcxproj", "{0A3E3A79-EE75-471D-BEEF-9E4A547A9DAB}"
@@ -21,14 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Debug|x64.ActiveCfg = Debug|x64
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Debug|x64.Build.0 = Debug|x64
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Debug|x86.ActiveCfg = Debug|Win32
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Debug|x86.Build.0 = Debug|Win32
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Release|x64.ActiveCfg = Release|x64
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Release|x64.Build.0 = Release|x64
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Release|x86.ActiveCfg = Release|Win32
-		{9ABEA838-E9B7-441D-B79D-FA3BE2BA0918}.Release|x86.Build.0 = Release|Win32
 		{C01416FD-FBAF-49F4-B2E7-354CCE614AA1}.Debug|x64.ActiveCfg = Debug|x64
 		{C01416FD-FBAF-49F4-B2E7-354CCE614AA1}.Debug|x64.Build.0 = Debug|x64
 		{C01416FD-FBAF-49F4-B2E7-354CCE614AA1}.Debug|x86.ActiveCfg = Debug|Win32
