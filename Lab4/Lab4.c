@@ -21,9 +21,9 @@ void main()
 
 	double d;
 	printf("Введите переменную double\n");
-	scanf("%e", &d);
+	scanf("%le", &d);
 
-	printf("\n%c\n%i\n%.2f\n%.0e\n", c, i, f, d);
+	printf("\n%c\n%i\n%.2f\n%le\n", c, i, f, d);
 
 	double num;
 	int intPart;
@@ -46,19 +46,15 @@ void main()
 	printf("Десятичный код символа равен %i\n", c2);
 	printf("Шестнадцатеричный код символа равен %x\n", c2);
 
-	int i2;
 	float result;
 
-	printf("\nВведите целое число i\n");
-	scanf("%d", &i2);
-
-	if (i2 != 0) 
+	if (i != 0) 
 	{
-		result = 1.0 / i2;
-		printf("1 / %d = %.2f\n", i2, result);
+		result = 1.0 / i;
+		printf("\n1 / %d = %.2f\n", i, result);
 	}
 	else 
-		printf("На 0 делить нельзя\n");
+		printf("\nНа 0 делить нельзя\n");
 
 	int a = 3;
 	int b = 11;
