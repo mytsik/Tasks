@@ -1,7 +1,5 @@
 #include <locale.h>
 #include <stdio.h>
-//#define _CRT_SECURE_NO_DEPRECATE
-//#define _NO_CRT_STDIO_INLINE
 
 void main() 
 {
