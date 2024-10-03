@@ -56,15 +56,16 @@ void main()
 	else 
 		printf("\nНа 0 делить нельзя\n");
 
-	int a = 3;
-	int b = 11;
+	int a = 11;
+	int b = 3;
 
 	printf("\n%d\n%.2f\n%lf\n", (int)a/b, (float)a/b, (double)a/b);
 
 	int N;
-	scanf("Ваше число %d", &N);
+	printf("\nВведите целое трехзначное число\n");
+	scanf("%d", &N);
 	int lastD = N % 10;
 	int firstD = N / 100;
 	int middleD = (N / 10) % 10;
-	printf("\nПоследняя цифра %d \n Первая цифра %d \n Сумма цифр %d", lastD, firstD, lastD + firstD + middleD);
+	printf("\nПоследняя цифра %d \nПервая цифра %d \nСумма цифр %d\n", lastD, firstD, lastD + firstD + middleD);
 }
