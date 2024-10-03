@@ -11,10 +11,11 @@ float Volume(float radius) {
     return (4.0 / 3.0) * M_PI * pow(radius, 3);
 }
 
-void main() {
-    float diameter, radius, surfaceArea, volume;
-
+void main() 
+{
     setlocale(LC_ALL, "RUS");
+
+    float diameter, radius, surfaceArea, volume;   
 
     printf("¬ведите диаметр шара\n");
     scanf_s("%f", &diameter);
