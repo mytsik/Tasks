@@ -3,10 +3,10 @@
 #define _USE_MATH_DEFINES 
 #include <math.h>
 
-double F(long double x, double y)
+double F(double x, double y)
 {
-	double numerator = sqrt(pow(2 + y, 2) + pow(sin(y + 5), 0.143));
-	double denominator = log(x + 1) + pow(y, 3);
+	double numerator = sqrt(pow((2 + y), 2) + pow(sin(y + 5), 0.143));
+	double denominator = log(x + 1) - pow(y, 3);
 	double result = numerator / denominator;
 	return result;
 }
@@ -15,14 +15,14 @@ void main()
 {
 	setlocale(LC_ALL, "RUS");
 
-	long double x;
+	double x;
 	double xFirstPart;
 	double xDegree;
 	
 	printf("Введите значение x\n");
 	scanf_s("%lf", &xFirstPart);
 	printf("* 10^");	
-	scanf_s("%d", &xDegree);
+	scanf_s("%lf", &xDegree);
 
 	x = xFirstPart * pow(10, xDegree);
 	printf("\n");
@@ -31,5 +31,5 @@ void main()
 	printf("Введите значение y\n");
 	scanf_s("%lf", &y);
 
-	printf("Результат: %.5lf\n", F(x, y)); 
+	printf("Результат: %.6lf\n", F(x, y)); 
 }
