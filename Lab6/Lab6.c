@@ -11,6 +11,12 @@ int Task1(int year)
 		return 0;
 }
 
+double Task2(double x)
+{
+	double result = x <= 3 ? pow(x, 2) - 3 * x + 9 : 1 / (pow(x, 3) + 6);
+	return result;
+}
+
 void main() 
 {
 	setlocale(LC_ALL, "RUS");
@@ -20,7 +26,13 @@ void main()
 	scanf_s("%d", &year);
 
 	if (Task1(year) == 1)
-		printf("Год високосный\n");
+		printf("Год %d високосный\n", year);
 	else
-		printf("Год не високосный\n");
+		printf("Год %d не високосный\n", year);
+
+	double x;
+	printf("\nВведите переменную x\n");
+	scanf_s("%lf", &x);
+
+	printf("F(x) = %.3lf\n", Task2(x));
 }
