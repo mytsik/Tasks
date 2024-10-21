@@ -30,9 +30,10 @@ void Task1(char ch)
 {
 	if (ch >= 'a' && ch <= 'z')
 		printf("Это буква\n");
-	else if (ch >= '0' && ch <= '9')
+	else 
+		if (ch >= '0' && ch <= '9')
 		printf("Это цифра\n");
-	else
+	    else
 		printf("Это ни буква, ни цифра\n");
 }
 
