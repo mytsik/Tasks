@@ -43,8 +43,6 @@ void Task2(float step)
 
     float summ_general = summ_positive + summ_negative;
     printf("Имя массива: C, накопленное значение: %.2f, количество положительных элементов: %d, количество отрицательных элементов: %d, среднее значение: %.2f\n", summ_general, positive_count, negative_count, summ_general / 100);
-
-
 }
 
 void Task1()
