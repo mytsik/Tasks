@@ -4,15 +4,15 @@
 int Task5_2(char *full_address, int size) 
 {
 	unsigned char *fstByte;
-	fstByte = (unsigned char*)full_address;
+	fstByte = (unsigned char*)full_address; //первый байт
 	unsigned char *printByte;
 
 	for (int i = 0; i < size; i++) 
 	{
-		printByte = fstByte + i;
+		printByte = fstByte + i; //байт который будет выводиться на консоль
 		printf("%.2x ", *printByte);
 	}		
-
+	printf("\n");
 	return 0;
 }
 
@@ -81,5 +81,20 @@ void main()
 
 	int i5 = 12345678;
 	Task5_2(&i5, sizeof(i5));
+	double d5 = 5.5;
+	Task5_2(&d5, sizeof(d5));
+	float f5 = 6.6;
+	Task5_2(&f5, sizeof(f5));
+	char ch5 = "6.6";
+	Task5_2(&ch5, sizeof(ch5));
 
+	printf("\n");
+
+	int numI = 12345.0;
+	float numF = 12345.0;
+	double numD = 12345.0;
+
+	Task5_2(&numI, sizeof(numI));
+	Task5_2(&numF, sizeof(numF));
+	Task5_2(&numD, sizeof(numD));
 }
