@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 
 void task1_1() 
 {
@@ -40,7 +41,24 @@ void task1_3()
 
 int task2(char number)
 {
-	for (int i = 0; number[i] != '\0'; i++) {
+	
+}
+
+void main()
+{
+	setlocale(LC_ALL, "RUS");
+
+	task1_1();
+	task1_2();
+	task1_3();
+
+	char number[100];
+	printf("Введите число\n");
+	scanf("%s", number);
+
+	int sum = 0;
+	for (int i = 0; number[i] != '\0'; i++)
+	{
 		// Преобразование символа в цифру с использованием остатка
 		int digit = number[i] - '0'; // Преобразование символа в целое число
 
@@ -49,16 +67,6 @@ int task2(char number)
 			sum += digit; // Добавление нечетной цифры к сумме
 		}
 	}
-}
 
-void main()
-{	
-	task1_1();
-	task1_2();
-	task1_3();
-
-	char number[];
-	printf("Введите число\n");
-	scanf("%s", number);
-	printf("Сумма нечетных цифр равна %d\n", task2(number);
+	printf("Сумма нечетных цифр равна %d\n", sum);
 }
