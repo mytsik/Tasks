@@ -39,11 +39,6 @@ void task1_3()
 	system("pause");
 }
 
-int task2(char number)
-{
-	
-}
-
 void main()
 {
 	setlocale(LC_ALL, "RUS");
@@ -60,8 +55,11 @@ void main()
 	for (int i = 0; number[i] != 0; i++)
 	{ 
 		if (number[i] % 2 != 0) 
-			sum += number[i] - '0';
+		{
+			int int_num = number[i] - '0';
+			sum += int_num;
+		}			
 	}
 
-	printf("Сумма нечетных цифр равна %d\n", sum);
+	printf("Сумма нечетных цифр в числе равна %d\n", sum);
 }
