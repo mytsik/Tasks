@@ -75,11 +75,11 @@ int byteSize2(char* address)
     if ((res / 4294967290) == 1)
         return 1;
     else
-        if ((4294967290 - res) == 1)
-            return 4;
-        else
-            if ((4294967290 - res) == 2)
-                return 8;
+        return (4294967290 - res) * 4;
+            
+        /*else
+            if ()
+                return 8;*/
     //return res;
 }
 
@@ -101,13 +101,13 @@ void main()
     size_t* point_s = &s;
 
     printf("Размер char: %lu\n", byteSize2(point_ch));
-    //printf("Размер int: %lu\n", size(point_i));
+    printf("Размер int: %lu\n", byteSize2(point_i));
     printf("Размер float: %lu\n", byteSize2(point_f));
     printf("Размер double: %lu\n", byteSize2(point_d));
     printf("Размер size_t: %lu\n", byteSize2(point_s));
     printf("\nПравильно:\n");
     printf("Размер char: %lu\n", sizeof(ch));
-    //printf("Размер int: %lu\n", sizeof(i));
+    printf("Размер int: %lu\n", sizeof(i));
     printf("Размер float: %lu\n", sizeof(f));
     printf("Размер double: %lu\n", sizeof(d));
     printf("Размер size_t: %lu\n", sizeof(s));
