@@ -2,68 +2,6 @@
 #include <locale.h>
 #include <stdlib.h>
 
-int size(char *address)
-{
-    //unsigned char* fstByte;
-    //fstByte = (char)address; //первый байт
-    
-
-    /*int byteAmount = 0;
-    for (int i = 0; ; i++)
-    {
-        unsigned char* byte;
-        byte = (int)address + i;
-        if (byte == 0)
-            break;
-        byteAmount += 1;
-    }
-    return byteAmount;*/
-    
-    //char ch_add = (char *)address;
-    //int bytes = strlen(*address);
-    //return bytes;
-    //int address_int = (int)address;
-    //int* address_int_point = &address_int;
-    char ch;// этот адрес будет за один байт
-    char *point_ch = &ch;
-
-    int ch_size = point_ch - '0'; //один байт в int
-    int actuall_address_size = address - '0';
-    printf("\nch_size = %d\n", ch_size);
-    printf("actuall_address_size = %d\n\n", actuall_address_size);
-
-    int difference = (actuall_address_size - ch_size) - '416';
-    if (difference == 0)
-        return 1;
-    /*else 
-        if (typeof(*address) == "float") 
-            return (difference / 16);*/
-    else
-        return (difference / 8);
-}
-
-int byteSize(char* address) 
-{
-    //unsigned char* fstByte;
-    //fstByte = (unsigned char*)address; //первый байт
-    //unsigned char* byte = 0;
-    ////char nAddress[100] = { *address };
-    ////char array[100] = *address;
-
-    //int size = 0;
-    //for (int i = 0; array[i] != 0; i++)
-    //    size += 1;
-
-    //int byteAmount = 0;
-    //for (int i = 0; i < size; i++)
-    //{
-    //    //byte = fstByte + i; //байт который будет выводиться на консоль
-    //    //printf("%.2x ", *byte);
-    //    byteAmount += 1;
-    //}
-    //return byteAmount;
-}
-
 int byteSize2(char* address)
 {
     char ch;// этот адрес будет за один байт
@@ -71,7 +9,6 @@ int byteSize2(char* address)
     int int_address = (int)address;
     int int_point_ch = (int)point_ch;      
     int res = (int_point_ch - int_address) / 64;
-    ////не используется вообще нигде
 
     if ((res / 4294967290) == 1)
         return 1; 
@@ -79,15 +16,8 @@ int byteSize2(char* address)
         return (4294967290 - res) * 4;
     else if ((4294967290 - res) == 3)
         return 2;
-    else 
-    {
-        
-    }
     
-    return res;
-
-            
-    
+    return res;               
 }
 
 void main()
