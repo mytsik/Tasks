@@ -69,18 +69,25 @@ int byteSize2(char* address)
     char ch;// этот адрес будет за один байт
     char* point_ch = &ch;
     int int_address = (int)address;
-    int int_point_ch = (int)point_ch;
-
-    
-    //int res2 = (int_point_ch - int_address) / 128;
+    int int_point_ch = (int)point_ch;      
     int res = (int_point_ch - int_address) / 64;
+    ////не используется вообще нигде
+
     if ((res / 4294967290) == 1)
-        return 1;
-    else
-        if (((4294967290 - res) == 1) || ((4294967290 - res) == 2))
-            return (4294967290 - res) * 4;
-            
+        return 1; 
+    else if (((4294967290 - res) == 1) || ((4294967290 - res) == 2))
+        return (4294967290 - res) * 4;
+    else if ((4294967290 - res) == 3)
+        return 2;
+    else 
+    {
+        
+    }
+    
     return res;
+
+            
+    
 }
 
 void main()
