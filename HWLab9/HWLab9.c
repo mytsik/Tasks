@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-#define M_PI 3.14159265358979323846
+#define M_PI 3.14
 #define _USE_MATH_DEFINES
 
 void main()
@@ -10,36 +10,44 @@ void main()
 	char symbol;
 	printf("Введите символ из которого будет строиться фигура\n");
 	scanf_s("%c", &symbol);
-	int radius;
+	int Radius; //радиус описанной окружности
 	printf("Введите радиус\n");
-	scanf_s("%d", &radius);
+	scanf_s("%d", &Radius);
 
 	int sin_p5 = sin(M_PI / 5);
-	int width = 2 * radius; //ширина пентагона
+	int cos_p5 = cos(M_PI / 5);
+	//int tan_p5 = tan(M_PI / 5);
+	int radius = Radius * cos_p5; //радиус вписанной окружности
+	int side = (1.18 * Radius); 
+	side = (int)side;//сторона
+	int width = 2 * Radius; //ширина 
+
 	if (width % 2 == 0)
 		width += 1;
+
+	if (side % 2 == 0)
+		side += 1;
 	//int side = 2 * radius * sin_p5; //длина одной стороны
 	
 	int spaces = (width - 1) / 2; //пробелы для верхней части
 	//int spaces2 = spaces; //пробелы для нижней части
 
-	int side = 0;
+	//int side = width - 8;
 	//печатаем верхнюю часть
-	for (int i = 1; i <= width; i += 2, spaces -= 1) // цикл для всей верхней части пентагона
+	for (int i = 1; i < width; i += 4, spaces -= 2) // цикл для всей верхней части пентагона
 	{				
-		for (int j = 1; j <= spaces; j++) // цикл для пробелов одной строки
+		for (int j = 0; j <= spaces; j++) // цикл для пробелов одной строки
 			printf(" ");
 		for (int k = 1; k <= i; k++) //цикл для символов одной строки
 			printf("%c", symbol);
 		printf("\n");
-		side += 1;
 	}
 	//печатаем нижнюю часть
-	for (int i = width - 1, s = 1; i >= side; i -= 2, s++)
+	for (int i = width, s = 1; i >= side; i -= 2, s++)
 	{
 		for (int j = 1; j <= s; j++) // цикл для пробелов одной строки
 			printf(" ");
-		for (int k = 1; k < i; k++) //цикл для символов одной строки
+		for (int k = 1; k <= i; k++) //цикл для символов одной строки
 			printf("%c", symbol);
 		printf("\n");
 	}
