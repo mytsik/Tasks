@@ -14,25 +14,18 @@ void main()
 	printf("Введите радиус\n");
 	scanf_s("%d", &Radius);
 
-	int sin_p5 = sin(M_PI / 5);
 	int cos_p5 = cos(M_PI / 5);
-	//int tan_p5 = tan(M_PI / 5);
-	int radius = Radius * cos_p5; //радиус вписанной окружности
 	int side = (1.18 * Radius); 
 	side = (int)side;//сторона
 	int width = 2 * Radius; //ширина 
 
 	if (width % 2 == 0)
 		width += 1;
-
 	if (side % 2 == 0)
 		side += 1;
-	//int side = 2 * radius * sin_p5; //длина одной стороны
 	
 	int spaces = (width - 1) / 2; //пробелы для верхней части
-	//int spaces2 = spaces; //пробелы для нижней части
-
-	//int side = width - 8;
+	
 	//печатаем верхнюю часть
 	for (int i = 1; i < width; i += 4, spaces -= 2) // цикл для всей верхней части пентагона
 	{				
