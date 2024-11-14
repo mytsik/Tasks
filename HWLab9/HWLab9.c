@@ -2,6 +2,7 @@
 #include <locale.h>
 #define M_PI 3.14
 #define _USE_MATH_DEFINES
+#include <math.h>
 
 void main()
 {
@@ -17,9 +18,8 @@ void main()
 		int Radius; //радиус описанной окружности
 		printf("Введите радиус\n");
 		scanf_s("%d", &Radius);
-				
-		int cos_p5 = cos(M_PI / 5);
-		int side = (1.18 * Radius);
+						
+		int side = 1.18 * Radius;
 		side = (int)side;//сторона
 		int width = 2 * Radius; //ширина 
 
@@ -48,16 +48,10 @@ void main()
 				printf("%c", symbol);
 			printf("\n");
 		}
-
 		
-		//
 		printf("\nПродолжить? (Да - 1, нет - 0)\n");				
 		scanf_s("%d", &a);
 		if (a == 0)
-			break;
-				
-		//printf("\nПродолжить? (Да - д, нет - н)\n");
-		////system("pause");
-		//if ((a = getchar()) == "н") break;
+			break;		
 	}	
 }
