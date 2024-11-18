@@ -5,7 +5,7 @@ void task1_1()
 {
 	printf("\n");
 	int row, col;
-	for (row = 1; row <= 9; ++row)
+	for (row = 1; row <= 9; row++)
 	{
 		for (col = 1; col <= 9; col++)
 			printf("%5d", col * row);
@@ -17,7 +17,7 @@ void task1_2()
 {
 	printf("\n");
 	int row, col;
-	for (row = 1; row <= 9; ++row)
+	for (row = 1; row <= 9; row++)
 	{
 		for (col = 1; col <= row; col++)
 			printf("%5d", col * row);

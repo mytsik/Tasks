@@ -4,10 +4,11 @@
 
 int byteSize2(char* address)
 {
-    char ch;// этот адрес будет за один байт
-    char* point_ch = &ch;
+    //fflush(stdin);
+    char new_ch;// этот адрес будет за один байт
+    char* new_point_ch = &new_ch;
     int int_address = (int)address;
-    int int_point_ch = (int)point_ch;      
+    int int_point_ch = (int)new_point_ch;      
     int res = (int_point_ch - int_address) / 64;
 
     if ((res / 4294967290) == 1)
@@ -16,8 +17,30 @@ int byteSize2(char* address)
         return (4294967290 - res) * 4;
     else if ((4294967290 - res) == 3)
         return 2;
+    //fflush(stdin);
     
     return res;               
+}
+
+int byteSize3(char* address) 
+{
+    /*char* plus_one = *address + 1;
+    char res = plus_one - 1;*/
+    //char new_ch;
+    //char* new_point_ch = &new_ch;
+    //char res = 
+    unsigned char* fstByte;
+    fstByte = (unsigned char*)address; //первый байт
+    unsigned char* byte = fstByte;
+    int count = 0;
+    for (int i = 0; byte != " "; i++)
+    {
+        byte = fstByte + i; //байт который будет выводиться на консоль
+        //printf("%.2x ", *byte);
+        count += 1;
+    }
+    return count;
+    
 }
 
 void main()
@@ -49,17 +72,17 @@ void main()
     signed int *point_sgi = &sgi;
 
 
-    printf("Размер char: %lu\n", byteSize2(point_ch));
-    printf("Размер int: %lu\n", byteSize2(point_i));
-    printf("Размер float: %lu\n", byteSize2(point_f));
-    printf("Размер double: %lu\n", byteSize2(point_d));
-    printf("Размер size_t: %lu\n", byteSize2(point_s));
-    printf("Размер short int: %lu\n", byteSize2(point_si));
-    printf("Размер unsigned short int: %lu\n", byteSize2(point_usi));
-    printf("Размер unsigned char: %lu\n", byteSize2(point_uc));
-    printf("Размер wchar_t: %lu\n", byteSize2(point_wt));
-    printf("Размер long long int: %lu\n", byteSize2(point_lli));
-    printf("Размер signed int: %lu\n", byteSize2(point_sgi));
+    printf("Размер char: %lu\n", byteSize3(point_ch));
+    printf("Размер int: %lu\n", byteSize3(point_i));
+    printf("Размер float: %lu\n", byteSize3(point_f));
+    printf("Размер double: %lu\n", byteSize3(point_d));
+    printf("Размер size_t: %lu\n", byteSize3(point_s));
+    printf("Размер short int: %lu\n", byteSize3(point_si));
+    printf("Размер unsigned short int: %lu\n", byteSize3(point_usi));
+    printf("Размер unsigned char: %lu\n", byteSize3(point_uc));
+    printf("Размер wchar_t: %lu\n", byteSize3(point_wt));
+    printf("Размер long long int: %lu\n", byteSize3(point_lli));
+    printf("Размер signed int: %lu\n", byteSize3(point_sgi));
     printf("\nПравильно:\n");
     printf("Размер char: %lu\n", sizeof(ch));
     printf("Размер int: %lu\n", sizeof(i));

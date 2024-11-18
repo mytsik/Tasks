@@ -15,9 +15,7 @@ void main()
     int array[1000]; 
     printf("Введите %d элементов массива\n", n);
     for (int i = 0; i < n; i++) 
-    {
         scanf_s("%d", &array[i]);
-    }
 
     int count = 0;    
     for (int j = 0; j < n; j++) 
@@ -27,5 +25,4 @@ void main()
     }
 
     printf("Количество элементов массива, которые больше %d равно %d\n", A, count);
-   
 }
