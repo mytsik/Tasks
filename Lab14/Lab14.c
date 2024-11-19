@@ -2,7 +2,7 @@
 #include <locale.h>
 #include <math.h>
 
-double full_elements(double *ptr_array, int n) //заполнение массива значени€ми из функции зад.2 лаб.8
+double *full_elements(double *ptr_array, int n) //заполнение массива значени€ми из функции зад.2 лаб.8
 {
 	double x = 0.1;
 	for (int i = 0; i < n; i++)
@@ -18,15 +18,19 @@ int put_elements(double *ptr_array, int n) //печать элементов массива
 {
 	printf("\nЁлементы массива:\n");
 	for (int i = 0; i < n; i++)
-	{
 		printf("%.3lf ", ptr_array[i]);
-	}
 }
-//
-//double *calc_elements(double* ptr_array, int n) //обработка элементов массива (см.  инд. вариант  зад. 1.3 в работе 11)
-//{
-//
-//}
+
+double *calc_elements(double* ptr_array, int n) //обработка элементов массива (см.  инд. вариант  зад. 1.3 в работе 11) и печать 
+{
+	double array2[1000];
+	printf("\nќбработанные элементы массива:\n");
+	for (int i = 0; i < n; i++)
+	{		
+		array2[i] = ptr_array[i] / 10;
+		printf("%.4lf ", array2[i]);
+	}	
+}
 
 void main()
 {
@@ -41,5 +45,7 @@ void main()
 
 	full_elements(ptr_array, size);
 	put_elements(ptr_array, size);
-	
+	printf("\n");
+	calc_elements(ptr_array, size);
+	printf("\n");
 }
