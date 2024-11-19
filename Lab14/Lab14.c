@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
+#include <stdlib.h>
 
 double *full_elements(double *ptr_array, int n) //заполнение массива значени€ми из функции зад.2 лаб.8
 {
@@ -32,6 +33,19 @@ double *calc_elements(double* ptr_array, int n) //обработка элементов массива (с
 	}	
 }
 
+double sum_elements(double* ptr_array, int begin, int end)
+{
+	double sum = 0;
+	for (int i = begin; i <= end; i++)
+		sum += ptr_array[i];
+	return sum;
+}
+
+int find_element(double* ptr_array, int n, double element)
+{
+
+}
+
 void main()
 {
 	setlocale(LC_ALL, "RUS");
@@ -48,4 +62,14 @@ void main()
 	printf("\n");
 	calc_elements(ptr_array, size);
 	printf("\n");
+
+	int begin, end;
+	printf("\n¬ведите начальный индекс:\n");
+	scanf_s("%d", &begin);
+	printf("¬ведите конечный индекс:\n");
+	scanf_s("%d", &end);
+	if ((end < 0) || (begin < 0) || (begin > end) || (end >= size))
+		printf("¬ведены недопустимые значени€ индексов элементов\n");
+	else
+		printf("—умма элементов массива от индекса %d до индекса %d равна %lf", begin, end, sum_elements(ptr_array, begin, end));	
 }
