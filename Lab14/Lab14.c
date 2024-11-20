@@ -43,7 +43,12 @@ double sum_elements(double* ptr_array, int begin, int end)
 
 int find_element(double* ptr_array, int n, double element)
 {
-
+	for (int i = 0; i < n; i++) 
+	{
+		if (ptr_array[i] == element)
+			return i;
+	}
+	return -1;
 }
 
 void main()
@@ -71,5 +76,10 @@ void main()
 	if ((end < 0) || (begin < 0) || (begin > end) || (end >= size))
 		printf("Введены недопустимые значения индексов элементов\n");
 	else
-		printf("Сумма элементов массива от индекса %d до индекса %d равна %lf", begin, end, sum_elements(ptr_array, begin, end));	
+		printf("Сумма элементов массива от индекса %d до индекса %d равна %.3lf\n", begin, end, sum_elements(ptr_array, begin, end));	
+
+	double num;
+	printf("\nВведите число для поиска:\n");
+	scanf_s("%lf", &num);
+	printf("Индекс найденного элемента равен %d\n", find_element(ptr_array, size, num));
 }
