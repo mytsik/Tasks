@@ -51,6 +51,47 @@ int find_element(double* ptr_array, int n, double element)
 	return -1;
 }
 
+int function(double* ptr_array, int n, int type) 
+{
+	switch (type)
+	{
+		case 1:
+			for (int i = 0; i < n; i++) 
+			{
+				if (ptr_array[i] > 0) 
+				{
+					return i;
+					break;
+				}					
+			}						
+		case -1:
+			for (int i = 0; i < n; i++)
+			{
+				if (ptr_array[i] < 0) 
+				{
+					return i;
+					break;
+				}					
+			}			
+		case 0:
+			for (int i = 0; i < n; i++)
+			{
+				if (ptr_array[i] == 0) 
+				{
+					if (i == n)
+					{
+						return -1;
+						break;
+					}	
+					return i;
+					break;
+				}				
+			}			
+		default:
+			return -1;
+	}
+}
+
 void main()
 {
 	setlocale(LC_ALL, "RUS");
@@ -82,4 +123,8 @@ void main()
 	printf("\nВведите число для поиска:\n");
 	scanf_s("%lf", &num);
 	printf("Индекс найденного элемента равен %d\n", find_element(ptr_array, size, num));
+	printf("\n");
+	printf("Порядковый номер первого положительного элемента массива равен %d\n", function(ptr_array, size, 1));
+	printf("Порядковый номер первого отрицательного элемента массива равен %d\n", function(ptr_array, size, -1));
+	printf("Порядковый номер первого нулевого элемента массива равен %d\n", function(ptr_array, size, 0));
 }
