@@ -18,20 +18,20 @@ double function(int* ptr_array, int n)
 	int min = ptr_array[0];
 	int min_index = 0;
 
-	for (int i = 0; i < n; i++)
+	for (int j = 0; j < n; j++)
 	{
-		if (ptr_array[i] < min)
+		if (ptr_array[j] < min)
 		{
-			min = ptr_array[i];
-			min_index = i;
+			min = ptr_array[j];
+			min_index = j;
 		}
 	}
 
 	int summ = 0;
 	double count = 0.0;
-	for (int i = min_index; i <= max_index; i++)
+	for (int k = min_index; k <= max_index; k++)
 	{
-		summ += ptr_array[i];
+		summ += ptr_array[k];
 		count += 1.0;
 	}
 	double average = summ / count;
