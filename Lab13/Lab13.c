@@ -27,19 +27,22 @@ void main()
 	setlocale(LC_ALL, "RUS");
 
 	char SnewTask2[41] = "Привет, ";
-	int nameLen = strlen(&NameTask2);
+	int nameLen = (int)strlen(&NameTask2);
 	char NameBack[10];
+	
 	int k = 0;
-
 	for (int i = nameLen - 1; i >= 0; i--)
 	{
 		NameBack[k] = NameTask2[i];
 		if (i == nameLen - 1)
-			NameBack[k] = tolower(NameBack[k]);
-		else if (i == 0)
 			NameBack[k] = toupper(NameBack[k]);
+		else if (i == 0)
+			NameBack[k] = tolower(NameBack[k]);
 		k += 1;
 	}
+
+	for (int i = nameLen; i < 10; i++) // удаляю символы М
+		NameBack[i] = '\0';
 
 	strcat(SnewTask2, NameBack);
 	printf("\n%s!\n", SnewTask2);
