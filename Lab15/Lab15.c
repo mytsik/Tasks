@@ -11,6 +11,17 @@ void printf_arr(int arr[7][7])
     }
 }
 
+int sum_negat_elems_in_5th_row(int arr[7][7])
+{
+    int sum = 0;
+    for (int i = 0; i < 7; i++) 
+    {
+        if (arr[4][i] < 0) 
+            sum += arr[4][i];
+    }
+    return sum;
+}
+
 void main() 
 {
     setlocale(LC_ALL, "RUS");
@@ -118,5 +129,7 @@ void main()
 
     printf("\nТранспонированный массив:\n");
     printf_arr(trans_arr);
+
+    printf("\nСумма отрицательных элементов пятой строки равна %d\n", sum_negat_elems_in_5th_row(arr));
 }
 
