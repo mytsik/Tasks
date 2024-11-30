@@ -1,23 +1,12 @@
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h>
-#include <time.h>
 
-// Функция для генерации случайного числа от -10 до 10
-//int random_int() 
-//{
-//    return rand() % 21 - 10;  // Генерируем число от 0 до 20 и вычитаем 10
-//}
-
-// Функция для вывода двумерного массива
-void print_array(int arr[7][7]) 
+void printf_arr(int arr[7][7]) 
 {
     for (int i = 0; i < 7; i++) 
     {
         for (int j = 0; j < 7; j++) 
-        {
             printf("%3d ", arr[i][j]);
-        }
         printf("\n");
     }
 }
@@ -43,12 +32,12 @@ void main()
     printf("\n");
     printf("     ");
     for (int j = 0; j < m; j++) 
-        printf(" %2d ", j);  //заголовок столбца
+        printf(" %2d ", j); //заголовок столбца
     printf("\n\n");
 
     for (int i = 0; i < n; i++) 
     {
-        printf(" %2d  ", i);  //заголовок строки
+        printf(" %2d  ", i); //заголовок строки
         for (int j = 0; j < m; j++) 
             printf(" %2d ", a[i][j]);
         printf("\n");
@@ -62,13 +51,7 @@ void main()
 
     if (n_find >= 0 && n_find < n) 
     {
-        int min = a[n_find][0];
-        for (int j = 1; j < m; j++) 
-        {
-            if (a[n_find][j] < min) 
-                min = a[n_find][j];
-        }
-        printf("Минимальный элемент в строке %d равен %d\n", n_find, min);
+        printf("Минимальный элемент в строке равен %d\n", n_find);
     }
     else
         printf("Строки под введенным номером не существует\n");
@@ -85,7 +68,7 @@ void main()
             if (a[i][m_find] > max) 
                 max = a[i][m_find];
         }
-        printf("Максимальный элемент в столбце %d равен %d\n", m_find, max);
+        printf("Максимальный элемент в столбце равен %d\n", max);
     }
     else 
         printf("Столбца под введенным номером не существует\n");
@@ -111,10 +94,6 @@ void main()
     
     int arr[7][7];
 
-    // Инициализация генератора случайных чисел
-    //srand(time(NULL));
-
-    // Заполнение исходного массива случайными числами от -10 до 10
     int el = -10;
     for (int i = 0; i < 7; i++) 
     {
@@ -128,21 +107,16 @@ void main()
     }
 
     int trans_arr[7][7];
-    // Транспонирование массива
     for (int i = 0; i < 7; i++) 
     {
         for (int j = 0; j < 7; j++) 
-        {
             trans_arr[i][j] = arr[j][i];
-        }
     }
 
-    // Вывод исходного массива
-    printf("Исходный массив:\n");
-    print_array(arr);
+    printf("\nИсходный массив:\n");
+    printf_arr(arr);
 
-    // Вывод транспонированного массива
     printf("\nТранспонированный массив:\n");
-    print_array(trans_arr);
+    printf_arr(trans_arr);
 }
 
