@@ -22,6 +22,55 @@ int sum_negat_elems_in_5th_row(int arr[7][7])
     return sum;
 }
 
+int equal_neighbor_pairs_in_rows(int arr[7][7]) 
+{
+    int count = 0;
+    for (int i = 0; i < 7; i++) 
+    {
+        for (int j = 0; j < 7 - 1; j++) 
+        {
+            if (arr[i][j] == arr[i][j + 1]) 
+                count++;
+        }
+    }
+    return count;
+}
+
+int equal_neighbor_pairs_in_columns(int arr[7][7])
+{
+    int count = 0;
+    for (int j = 0; j < 7; j++) 
+    {
+        for (int i = 0; i < 7 - 1; i++) 
+        {
+            if (arr[i][j] == arr[i + 1][j]) 
+                count++;
+        }
+    }
+    return count;
+}
+
+void findMax(int arr[7][7])
+{
+    int max = arr[0][0];
+    int row = 0;
+    int col = 0;
+
+    for (int j = 0; j < 7; j++) 
+    {
+        for (int i = 1; i < 7; i++)
+        {  
+            if (arr[i][j] > max) 
+            {
+                max = arr[i][j];
+                row= i;
+                col = j;
+            }
+        }
+    }
+    printf("\nИндекс строки максимального значения равен %d, индекс столбца максимального значения равен %d\n", row, col);
+}
+
 void main() 
 {
     setlocale(LC_ALL, "RUS");
@@ -131,5 +180,9 @@ void main()
     printf_arr(trans_arr);
 
     printf("\nСумма отрицательных элементов пятой строки равна %d\n", sum_negat_elems_in_5th_row(arr));
+    printf("\nЧисло пар одинаковых соседних элементов в строках равно %d\n", equal_neighbor_pairs_in_rows(arr));
+    printf("\nЧисло пар одинаковых соседних элементов в столбцах равно %d\n", equal_neighbor_pairs_in_columns(arr));
+
+    findMax(arr);
 }
 
