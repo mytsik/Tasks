@@ -50,7 +50,7 @@ int equal_neighbor_pairs_in_columns(int arr[7][7])
     return count;
 }
 
-void findMax(int arr[7][7])
+int findMax(int arr[7][7])
 {
     int max = arr[0][0];
     int row = 0;
@@ -69,6 +69,7 @@ void findMax(int arr[7][7])
         }
     }
     printf("\nИндекс строки максимального значения равен %d, индекс столбца максимального значения равен %d\n", row, col);
+    return 1;
 }
 
 void main() 
