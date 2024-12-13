@@ -15,10 +15,8 @@ int sum_negat_elems_in_5th_row(int arr[7][7])
 {
     int sum = 0;
     for (int i = 0; i < 7; i++) 
-    {
-        if (arr[4][i] < 0) 
-            sum += arr[4][i];
-    }
+        sum += arr[4][i];
+    
     return sum;
 }
 
