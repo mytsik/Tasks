@@ -88,9 +88,6 @@ void main()
 	printf("\nЁлементы обработанного массива:\n");
 	put_elements(ptr_array2, size);
 
-	/*free(ptr_array);
-	free(ptr_array2);*/
-
 	double* ptr_array3;
 	ptr_array3 = (double*)malloc(size * sizeof(double));
 
@@ -117,15 +114,6 @@ void main()
 
 	free(ptr_array3);
 	
-	//srand(time(NULL));
-	
-
-	//free(ptr_array);
-
-	//очистка буфера
-	/*scanf("%*[^\n]");
-	scanf("%*c");*/
-	
 	srand(time(NULL));
 	int index = 0 + rand() % ((size - 1) - 0 + (size - 1));
 	int insert_num = -999;
@@ -138,5 +126,4 @@ void main()
 	for (int i = 0; i < size; i++)
 		printf("%d ", ptr_array5[i]);
 	printf("\n");
-	//put_elements(ptr_array4, size);
 }
