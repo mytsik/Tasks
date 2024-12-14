@@ -88,8 +88,8 @@ void main()
 	printf("\nЭлементы обработанного массива:\n");
 	put_elements(ptr_array2, size);
 
-	free(ptr_array);
-	free(ptr_array2);
+	/*free(ptr_array);
+	free(ptr_array2);*/
 
 	double* ptr_array3;
 	ptr_array3 = (double*)malloc(size * sizeof(double));
@@ -110,14 +110,15 @@ void main()
 	printf("\nМассив с удаленным элементом\n");
 	put_elements(ptr_array3, size);
 
-	/*free(ptr_array3);
-
 	int* ptr_array4;
-	ptr_array4 = (int*)malloc(size * sizeof(int));*/
-
-	/*srand(time(NULL));
+	ptr_array4 = (int*)malloc(size * sizeof(int));
 	for (int i = 0; i < size; i++)
-		ptr_array4[i] = -1 + rand() % (1 - (-1) + 1);*/
+		ptr_array4[i] = (int)ptr_array3[i];
+
+	free(ptr_array3);
+	
+	//srand(time(NULL));
+	
 
 	//free(ptr_array);
 
@@ -125,15 +126,17 @@ void main()
 	/*scanf("%*[^\n]");
 	scanf("%*c");*/
 	
-
-
-
-
 	srand(time(NULL));
 	int index = 0 + rand() % ((size - 1) - 0 + (size - 1));
 	int insert_num = -999;
-	
-	insert(ptr_array3, &size, index, insert_num);
-	printf("\n\n");
-	put_elements(ptr_array3, size);
+
+	int* ptr_array5;
+	ptr_array5 = (int*)malloc(size * sizeof(int));
+	ptr_array5 = insert(ptr_array4, &size, index, insert_num);
+		
+	printf("\n");
+	for (int i = 0; i < size; i++)
+		printf("%d ", ptr_array5[i]);
+	printf("\n");
+	//put_elements(ptr_array4, size);
 }
